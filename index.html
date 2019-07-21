@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="OnlineShoppingApp">
+  <head>
+    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/lib/jquery-ui-1.11.4.custom/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  </head>
+  
+  
+  <body>
+    
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner"  ng-controller="UserController">
+          <ul class="nav">
+              <li ng-if="userName =='' "><a href="#/login">Login</a></li>
+              <li ng-if="userName !='' "  class="topnav-right">{{userName}}</li>
+              <li  ng-if="userName !='' "><button ng-click="logout()">Logout</button></li>
+          </ul>
+        </div>
+      </div>
+    <ng-view></ng-view>
+
+      </div>
+    <script src="./assets/lib/angular/angular.js"></script>
+    <script src="./assets/lib/jquery.min.js"></script>
+    <script src="./assets/lib/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="./assets/lib/bootstrap.min.js"></script>
+    <script src="./assets/lib/angular/angular-route.js"></script>
+    <script src="./assets/lib/angular/angular-resource.js"></script>
+    <script src="./app/app.module.js"></script>
+   <script src="./app/app.routes.js"></script> 
+   <script src="./assets/js/controllers/UserController.js"></script>
+   <script src="./assets/js/controllers/ProductController.js"></script>
+   <script src="./assets/js/services/UserService.js"></script> 
+   <script src="./assets/js/services/ProductService.js"></script> 
+    
+  </body>
+</html>

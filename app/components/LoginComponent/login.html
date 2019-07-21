@@ -1,0 +1,11 @@
+<div class="row">
+<div style="text-align: center; color: black" class="col-s-3">
+<h3 class="centeredText" > <i class="fas fa-shopping-cart" ></i>eShop.com</h3>
+  </div>
+  <form style="text-align: center" name="Name" class="col-s-3">
+    <input type="text" placeholder="user name" ng-model="userName" ng-pattern="/^[a-zA-Z0-9]*$/" required>
+  </form>
+    <div style="text-align: center ">
+    <button class="loginButton btn btn-primary col-s-3" ng-click="Exist()" ng-disabled="Name.$invalid">Login</button>
+  </div>
+</div>

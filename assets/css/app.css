@@ -1,0 +1,23 @@
+/* app css stylesheet */
+body{
+  background-color: green;
+}
+.centeredText{
+  text-align: center;
+  margin-top: 30%;
+
+}
+
+.loginButton{
+  width: 20%;
+  border: 0;
+  border-radius: 10px;
+  height: 10%;
+  margin: 10px;
+}
+#Error{
+  color: red;
+}
+.topnav-right {
+  float: right;
+}
