@@ -1,0 +1,16 @@
+<div class="navbar ">
+    <div class="navbar-inner"  ng-controller="UserController">
+      <ul class="nav" >
+           <li style="text-align: center">
+                <a href="#" class="notification">
+                        <i class="fas fa-shopping-cart " style="color: black; font-size: 200% " ></i>
+                        <span class="badge">3</span>
+                      </a>
+            </li>
+            <li ><a style="color: black">e.Shop.Com</a></li>
+          <li class="nav-right" ng-if="userName =='' "><a href="#/login">Login</a></li>
+          <li ng-if="userName !='' "  class="topnav-right">{{userName}}</li>
+          <li  ng-if="userName !='' "><button ng-click="logout()">Logout</button></li>
+      </ul>
+    </div>
+  </div>

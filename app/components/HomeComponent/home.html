@@ -1,9 +1,17 @@
-<div class="container-fluid">
+<div>
+        <nav-bar></nav-bar>
+</div>
+<div class="container">
 <div class="row">
-        <div ng-repeat="product in products" class="span3">
+        <div ng-repeat="product in products">
+                
+          <div class="col-lg-3" >
                <h1 style="color: black"> {{product.productName}}</h1>
-               <h2 style="color: red">${{product.price}}</h2>
+               <h2 style="color: red">{{product.price | currency}}</h2>
                <h6 style="color: gray">{{product.description}}</h6>
+          </div>
+               
+
         </div>
 
 </div>

@@ -8,14 +8,29 @@ OnlineShoppingApp.controller('ProductController',
         .then(function (response)  
         {  
             $scope.products = response.data;  
+            $scope.products.forEach(product => {
+                ProductService.GetProductImages(product.id).then(function(response){
+                    
+                    product.imageUrl=response.data[0].imageUrl;
+                    
+    
+                }).catch(function(error){
+                $log.error('Oops! Something went wrong while fetching the data.')  
+    
+                })
+                
+            });
             
         }).catch(function (error)  
 
         {  
             $log.error('Oops! Something went wrong while fetching the data.')  
-        }
-        );
-    
-        }
+        });
+
+        
        
-);
+
+
+
+    
+});
