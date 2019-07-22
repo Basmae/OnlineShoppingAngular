@@ -1,7 +1,5 @@
 /* app css stylesheet */
-body{
-  background-color: green;
-}
+
 .centered{
   margin-top: 30%;
 
@@ -21,25 +19,20 @@ body{
 }
 
 .notification {
-  background-color:red;
-  color: white;
+ 
+  color: black;
   text-decoration: none;
-  padding: 15px 26px;
   position: relative;
   display: inline-block;
   border-radius: 5px;
 }
 
-.notification:hover {
-  background: red;
-}
 
-.notification .badge {
+.badge {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  left: 25px;
+  top: 40px;
   padding: 5px 10px;
-  border-radius: 75%;
   background: red;
   color: white;
 }
