@@ -1,0 +1,1 @@
+var OnlineShoppingApp = angular.module("OnlineShoppingApp",['ngRoute','ngResource']);
