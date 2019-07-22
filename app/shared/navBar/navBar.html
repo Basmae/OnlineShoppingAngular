@@ -1,16 +1,49 @@
-<div class="navbar ">
-    <div class="navbar-inner"  ng-controller="UserController">
-      <ul class="nav" >
-           <li style="text-align: center">
-                <a href="#" class="notification">
-                        <i class="fas fa-shopping-cart " style="color: black; font-size: 200% " ></i>
-                        <span class="badge">3</span>
-                      </a>
+<nav class="mb-1 navbar navbar-expand-lg navbar-light bg-light navbar-background ">
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="UserController">
+     
+              <a href="#" class="navbar-brand">
+                      <i class="fas fa-shopping-cart " ></i>
+                      <span class="badge  rounded-circle text-light">3</span>
+                    </a>
+          
+          <a class="navbar-brand" href="#/home">e.Shop.Com</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+            aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+     
+        <!--
+          <li class="nav-item" ng-if="userName =='' "><a href="#/login">Login</a></li>
+          <li class="nav-item" ng-if="userName !='' " >{{userName}}</li>
+          <li class="nav-item" ng-if="userName !='' "><button ng-click="logout()">Logout</button></li>
+-->
+<li class="nav-item avatar">
+    <a class="nav-link p-0" href="#">
+        <img src="../../../assets/img/avatar.png" class="rounded-circle z-depth-0"
+             alt="avatar image" height="35">
+    </a>
+</li>
+          <li class="nav-item dropdown">
+              <a class="btn btn-secondary dropdown-toggle bg-light border-0 text-dark" href="" role="button"
+               id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               {{userName}}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#/home">Home</a>
+                <a class="dropdown-item" href="#">filter</a>
+                <a class="dropdown-item" href="#">sync</a>
+                <button class="dropdown-item" ng-click="logout()">Logout</button>
+              </div>
             </li>
-            <li ><a style="color: black">e.Shop.Com</a></li>
-          <li class="nav-right" ng-if="userName =='' "><a href="#/login">Login</a></li>
-          <li ng-if="userName !='' "  class="topnav-right">{{userName}}</li>
-          <li  ng-if="userName !='' "><button ng-click="logout()">Logout</button></li>
-      </ul>
+
+          
+    </ul>
     </div>
-  </div>
+    </div>
+  </nav>
+
+  
