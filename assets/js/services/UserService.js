@@ -9,6 +9,9 @@ OnlineShoppingApp.factory("UserService", function ($http) {
         },
         GetUser: function (id) {
             return $http.get("https://localhost:44367/api/users/"+id) ;
+        },
+        GetUserByName: function (name) {
+            return $http.get("https://localhost:44367/api/users/name/"+name) ;
         }
     }
 });   
