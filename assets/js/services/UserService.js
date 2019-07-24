@@ -1,17 +1,17 @@
-OnlineShoppingApp.factory("UserService", function ($http) {
+OnlineShoppingApp.factory("UserService", function ($http,API) {
     return {
         GetUsers: function () {
             
-            return $http.get("https://localhost:44367/api/users");
+            return $http.get(API.UserAPI);
         },
         UserExist: function (userName) {
-            return $http.get("https://localhost:44367/api/users/Exist/" + userName);
+            return $http.get(API.UserAPI+"/Exist/" + userName);
         },
         GetUser: function (id) {
-            return $http.get("https://localhost:44367/api/users/"+id) ;
+            return $http.get(API.UserAPI+"/"+id) ;
         },
         GetUserByName: function (name) {
-            return $http.get("https://localhost:44367/api/users/name/"+name) ;
+            return $http.get(API.UserAPI+"/name/"+name) ;
         }
     }
 });   

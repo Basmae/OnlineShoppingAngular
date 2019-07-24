@@ -1,6 +1,6 @@
 OnlineShoppingApp.controller('ProductController',
     function ProductController($scope,ProductService,$log,localStorageService) {
-        $scope.userName=localStorageService.GetUserName(); 
+        $scope.userName=localStorageService.Get("UserName"); 
         console.log($scope.userName);
         $scope.products;
 

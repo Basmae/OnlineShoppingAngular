@@ -2,12 +2,12 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="UserController">
 
-    <a href="#" class="navbar-brand">
+    <a ng-href="#/cart" class="navbar-brand">
       <i class="fas fa-shopping-cart "></i>
       <span class="badge  rounded-circle text-light">{{CartCounter}}</span>
     </a>
 
-    <a class="navbar-brand" href="#/home">e.Shop.Com</a>
+    <a class="navbar-brand" ng-href="#/home">e.Shop.Com</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
       aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -16,19 +16,19 @@
       <ul class="navbar-nav ml-auto nav-flex-icons">
 
         <li class="nav-item avatar">
-          <a class="nav-link p-0" href="#">
-            <img src="../../../assets/img/avatar.png" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+          <a class="nav-link p-0" ng-href="#">
+            <img ng-src="../../../assets/img/avatar.png" class="rounded-circle z-depth-0" alt="avatar image" height="35">
           </a>
         </li>
         <li class="nav-item dropdown">
-          <a class="btn btn-secondary dropdown-toggle bg-light border-0 text-dark" href="" role="button"
+          <a class="btn btn-secondary dropdown-toggle bg-light border-0 text-dark" ng-href="" role="button"
             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{userName}}
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#/home">Home</a>
-            <a class="dropdown-item" ng-show="isHome===1" href="#">filter</a>
-            <a class="dropdown-item" href="#">sync</a>
+            <a class="dropdown-item" ng-href="#/home">Home</a>
+            <a class="dropdown-item" ng-show="isHome===1" ng-href="#">filter</a>
+            <a class="dropdown-item" ng-href="#">sync</a>
             <button class="dropdown-item" ng-click="logout()">Logout</button>
           </div>
         </li>

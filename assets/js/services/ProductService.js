@@ -1,15 +1,15 @@
-OnlineShoppingApp.factory("ProductService", function ($http) {
+OnlineShoppingApp.factory("ProductService", function ($http,API) {
     return {
         GetProducts: function () {
             
-            return $http.get("https://localhost:44367/api/products");
+            return $http.get(API.ProductsAPI);
         },
        GetProductImages:function(id){
-           return $http.get("https://localhost:44367/api/products/images/"+id)
+           return $http.get(API.ProductsAPI+"/images/"+id)
        },
        GetProduct:function(id)
        {
-        return $http.get("https://localhost:44367/api/products/"+id);
+        return $http.get(API.ProductsAPI+"/"+id);
        }
        
     }

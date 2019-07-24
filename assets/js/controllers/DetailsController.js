@@ -1,5 +1,6 @@
 OnlineShoppingApp.controller('DetailsController',
-    function DetailsController($scope,ProductService,$log,$routeParams,CartService,UserService,localStorageService,$location) {
+    function DetailsController($scope,ProductService,$log,$routeParams,
+        CartService,UserService,localStorageService,$location,$window) {
         
         $scope.product;
         $scope.counter=1;
@@ -40,7 +41,7 @@ OnlineShoppingApp.controller('DetailsController',
                 cart.product=$scope.product;
 
                 cart.quantity=$scope.counter;
-                UserService.GetUserByName(localStorageService.GetUserName()).then(function(response){
+                UserService.GetUserByName(localStorageService.Get("UserName")).then(function(response){
                     cart.userId=response.data.id;
                     cart.user=response.data;
                     CartService.AddCart(cart).then(function(response){
@@ -53,6 +54,7 @@ OnlineShoppingApp.controller('DetailsController',
                 });
                 //CartService.SetCartCount($scope.counter);
             //window.location = '#/home';
+           // $window.location.reload('/home');
                 $location.path('/home');
             }
             

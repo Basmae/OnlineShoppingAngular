@@ -1,18 +1,13 @@
 OnlineShoppingApp.factory("localStorageService", function ($window) {
     return {
-        GetUserName: function () {
-            
-            return $window.localStorage.userName;
+        Set:function(Key , value)
+        {
+            $window.localStorage[Key]=value;
         },
-        SetUserName: function (userName) {
-            $window.localStorage.userName=userName;
-        },
-        GetUserId: function () {
-            
-            return $window.localStorage.userId;
-        },
-        SetUserId: function (userId) {
-            $window.localStorage.userId=userId;
+        Get:function(key)
+        {
+            return $window.localStorage[key];
+
         }
        
     }
