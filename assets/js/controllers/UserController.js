@@ -1,28 +1,28 @@
 OnlineShoppingApp.controller('UserController',
-    function UserController($scope,UserService,$log,$window) {
-        $scope.userName=$window.localStorage.userName;
+    function UserController($scope,UserService,$log,$window,localStorageService,CartService) {
+        $scope.userName=localStorageService.Get("UserName");
+        $scope.userId=localStorageService.Get("UserId"); 
+        CartService.GetUserCarts($scope.userId).then(function(response){
+            $scope.CartCounter=0;
+            response.data.forEach(cart => {
+            $scope.CartCounter+=cart.quantity;
+                
+            });
+        });
         $scope.users;
-
-        var AllUsers = UserService.GetUsers();  
-        AllUsers.then(function (response)  
-        {  
-            $scope.users = response.data;  
-            
-        }).catch(function (error)  
-
-        {  
-            $log.error('Oops! Something went wrong while fetching the data.')  
-        }
-        );
-    
+        if($window.location.hash=='/home')
+           $scope.isHome=1;
         $scope.Exist = function(){
             console.log("fetching");
             UserService.UserExist($scope.userName).then(function(response){
                 console.log(response.data);
                 if(response.data==true)
                 {
-                    $window.localStorage.userName=$scope.userName;
-                     $window.location = '#/home';
+                    localStorageService.Set("UserName",$scope.userName)
+                    UserService.GetUserByName($scope.userName).then(function(response){
+                        localStorageService.Set("UserId",response.data.id);
+                    })
+                     $window.location = '/home';
                 }
                 else
                 $window.alert("Please enter valid userName");
@@ -33,8 +33,9 @@ OnlineShoppingApp.controller('UserController',
         };
         $scope.logout = function()
         {
-            window.localStorage.userName="";
-            window.location = '#/home';
+            localStorageService.Set("UserName","");
+            localStorageService.Set("UserId",null);
+            $window.location = '/login';
      
         }
        

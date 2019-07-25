@@ -1,6 +1,6 @@
 OnlineShoppingApp.controller('ProductController',
-    function ProductController($scope,ProductService,$log,$window) {
-        $scope.userName=$window.localStorage.userName; 
+    function ProductController($scope,ProductService,$log,localStorageService) {
+        $scope.userName=localStorageService.Get("UserName"); 
         console.log($scope.userName);
         $scope.products;
 
@@ -15,6 +15,7 @@ OnlineShoppingApp.controller('ProductController',
                     
     
                 }).catch(function(error){
+                    console.log(error);
                 $log.error('Oops! Something went wrong while fetching the data.')  
     
                 })
