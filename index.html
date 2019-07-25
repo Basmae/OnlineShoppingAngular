@@ -1,11 +1,13 @@
 <!doctype html>
 <html ng-app="OnlineShoppingApp">
   <head>
+      <base href="/">
       <meta charset="utf-8"/>
       <base href="/">
     <link rel="stylesheet" href="assets/lib/jquery-ui-1.11.4.custom/jquery-ui.css">
-    <link rel="stylesheet" href="assets/lib/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap-slider.css">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -21,17 +23,15 @@
     <ng-view></ng-view>
 
       </div>
-    <script src="./assets/lib/jquery.min.js"></script>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/jquery/src/jquery.js"></script>
     <script src="./assets/lib/jquery-1.9.1.min.js"></script>
-    <script src="./assets/lib/bootstrap-slider.js"></script>
-    <script src="./assets/lib/angular/angular.js"></script>
-    <script src="./assets/lib/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-    <script src="./assets/lib/angular/angular-route.js"></script>
-    <script src="./assets/lib/angular/angular-resource.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./node_modules/angular-route/angular-route.js"></script>
+    <script src="./node_modules/angular-resource/angular-resource.js"></script>
     <script src="./app/app.module.js"></script>
    <script src="./app/app.routes.js"></script> 
    <script src="./app/app.config.js"></script>
-   <script src="./app/shared/directives/slider.js"></script>
    <script src="./app/shared/localStorageService.js"></script>
    <script src="./assets/js/services/UserService.js"></script> 
    <script src="./assets/js/services/ProductService.js"></script> 

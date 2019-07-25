@@ -1,18 +1,19 @@
 OnlineShoppingApp.factory("UserService", function ($http,API) {
-   var APIBase=API.BaseUrl;
+   var APIBase=API.BaseUrl+ API.UserAPI;
+
     return {
         GetUsers: function () {
             
-            return $http.get(APIBase+ API.UserAPI);
+            return $http.get(APIBase  );
         },
         UserExist: function (userName) {
-            return $http.get(APIBase+ API.UserAPI+"/Exist/" + userName);
+            return $http.get(APIBase+"/Exist/" + userName);
         },
         GetUser: function (id) {
-            return $http.get(APIBase+ API.UserAPI+"/"+id) ;
+            return $http.get(APIBase +"/"+id) ;
         },
         GetUserByName: function (name) {
-            return $http.get(APIBase+ API.UserAPI+"/name/"+name) ;
+            return $http.get(APIBase  +"/name/"+name) ;
         }
     }
 });   
