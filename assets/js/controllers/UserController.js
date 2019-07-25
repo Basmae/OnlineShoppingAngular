@@ -10,7 +10,7 @@ OnlineShoppingApp.controller('UserController',
             });
         });
         $scope.users;
-        if($window.location.hash=='#/home')
+        if($window.location.hash=='/home')
            $scope.isHome=1;
         $scope.Exist = function(){
             console.log("fetching");
@@ -22,7 +22,7 @@ OnlineShoppingApp.controller('UserController',
                     UserService.GetUserByName($scope.userName).then(function(response){
                         localStorageService.Set("UserId",response.data.id);
                     })
-                     $window.location = '#/home';
+                     $window.location = '/home';
                 }
                 else
                 $window.alert("Please enter valid userName");
@@ -35,7 +35,7 @@ OnlineShoppingApp.controller('UserController',
         {
             localStorageService.Set("UserName","");
             localStorageService.Set("UserId",null);
-            $window.location = '#/login';
+            $window.location = '/login';
      
         }
        
