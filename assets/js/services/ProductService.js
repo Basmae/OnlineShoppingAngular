@@ -12,6 +12,9 @@ OnlineShoppingApp.factory("ProductService", function ($http,API) {
        GetProduct:function(id)
        {
         return $http.get(APIBase +"/"+id);
+       },
+       FilterProducts:function(min,max){
+           return $http.get(APIBase + "/filter/"+min+"/"+max);
        }
        
     }

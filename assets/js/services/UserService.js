@@ -7,6 +7,7 @@ OnlineShoppingApp.factory("UserService", function ($http,API) {
             return $http.get(APIBase  );
         },
         UserExist: function (userName) {
+            console.log(APIBase);
             return $http.get(APIBase+"/Exist/" + userName);
         },
         GetUser: function (id) {

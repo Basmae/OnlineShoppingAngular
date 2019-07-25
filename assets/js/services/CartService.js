@@ -13,7 +13,7 @@ OnlineShoppingApp.factory("CartService", function ($http,localStorageService,API
        {
            return $http({
             method: 'DELETE',
-            url :APIBase+ API.CartsAPI ,
+            url : APIBase + API.CartsAPI ,
             data: cart,
             headers: {
                 'Content-type': 'application/json'

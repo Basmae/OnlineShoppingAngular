@@ -1,10 +1,18 @@
 OnlineShoppingApp.controller('CartController',
     function CartController($scope,CartService,localStorageService,ProductService,$location,$window){
        $scope.carts;
+       $scope.submitAvailable;
+       $scope.loading;
        $scope.userId=localStorageService.Get("UserId");
+       if(!$scope.userId)
+           $window.alert("Please Login");
+        console.log($scope.userId);
        CartService.GetUserCarts($scope.userId).then(function(response){
 
            $scope.carts=response.data;
+        $scope.loading=1;
+           if($scope.carts.length>0)
+           $scope.submitAvailable=1;
           // console.log($scope.carts)
            $scope.carts.forEach(cart => {
            ProductService.GetProduct(cart.productId).then(function(response){
