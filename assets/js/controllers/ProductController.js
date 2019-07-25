@@ -3,6 +3,7 @@ OnlineShoppingApp.controller('ProductController',
         $scope.userName=localStorageService.Get("UserName"); 
         console.log($scope.userName);
         $scope.products;
+        $scope.loading;
         if($scope.userName==="")
         $window.alert("Please Login");
 
@@ -15,7 +16,7 @@ OnlineShoppingApp.controller('ProductController',
         .then(function (response)  
         {  
             $scope.products = response.data;  
-            
+            $scope.loading=1;
             $scope.products.forEach(product => {
                 ProductService.GetProductImages(product.id).then(function(response){
                     

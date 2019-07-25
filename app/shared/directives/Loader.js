@@ -1,17 +1,13 @@
-OnlineShoppingApp.directive('loading', ['$http', function ($http) {
-    return {
-      restrict: 'A',
-      link: function (scope, element, attrs) {
-        scope.isLoading = function () {
-          return $http.pendingRequests.length > 0;
-        };
-        scope.$watch(scope.isLoading, function (value) {
-          if (value) {
-            element.removeClass('ng-hide');
-          } else {
-            element.addClass('ng-hide');
-          }
+OnlineShoppingApp
+    .directive('ngLoader',
+        function() {
+            return {
+                restrict: 'E',
+                replace: true,
+                template: '<div class="row text-justify justify-content-center">'+
+                '<div ng-if="!loading" class="spinner-border" role="status">'+
+                       ' <span class="sr-only">Loading...</span>'+
+                '</div> </div>'
+                
+            };
         });
-      }
-    };
-}]);

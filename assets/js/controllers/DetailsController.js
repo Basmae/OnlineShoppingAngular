@@ -4,11 +4,13 @@ OnlineShoppingApp.controller('DetailsController',
         
         $scope.product;
         $scope.counter=1;
+        $scope.loading;
 
          ProductService.GetProduct($routeParams.id)
         .then(function (response)  
         {  
             $scope.product = response.data;  
+        $scope.loading=1;
             ProductService.GetProductImages($scope.product.id).then(function(response){
                 $scope.product.images=response.data;
 

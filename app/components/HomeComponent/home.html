@@ -2,28 +2,30 @@
         <nav-bar></nav-bar>
 </div>
 <div class="container mt-5">
-<div class="row">
-        <div class="loader" data-loading></div>
-        <div ng-repeat="product in products | orderBy:product.price:true"  class="col-lg-4 col-md-6 col-sm-12">
-                <a ng-href="details/{{product.id}}">
-          <div class="row text-justify justify-content-center">
-                  <div class="col-12 text-center">
-                     <img ng-src="{{product.imageUrl}}"  class=" img-fluid" style="height: 200px; width: auto"/>
-                  </div>
-                  <div class="col-12 text-center">
-                     <h1  style="color: black">{{product.productName}}</h1>
-                  </div>
-                  <div class="col-12 text-center">
-                        <h2  style="color: red">{{product.price | currency}}</h2>
-                  </div>
-                  <div class="col-12 text-center">
-                        <h6  style="color: gray">{{product.description}}</h6>
-                  </div>
-          </div>
-        </a>  
+
+        <ng-loader></ng-loader>
+
+        <div class="row" ng-if="loading">
+                <div ng-repeat="product in products | orderBy:product.price:true" class="col-lg-4 col-md-6 col-sm-12">
+                        <a ng-href="details/{{product.id}}">
+                                <div class="row text-justify justify-content-center">
+                                        <div class="col-12 text-center">
+                                                <img src="{{product.imageUrl}}" class=" img-fluid"
+                                                        style="height: 200px; width: auto" />
+                                        </div>
+                                        <div class="col-12 text-center">
+                                                <h1 style="color: black">{{product.productName}}</h1>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                                <h2 style="color: red">{{product.price | currency}}</h2>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                                <h6 style="color: gray">{{product.description}}</h6>
+                                        </div>
+                                </div>
+                        </a>
+
+                </div>
 
         </div>
-
 </div>
-</div>
-
