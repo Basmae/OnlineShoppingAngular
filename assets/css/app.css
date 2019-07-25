@@ -1,5 +1,8 @@
 /* app css stylesheet */
 
+body {
+  height: 100%;
+}
 .centered{
   margin-top: 30%;
 

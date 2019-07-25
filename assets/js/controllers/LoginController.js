@@ -2,7 +2,7 @@ OnlineShoppingApp.controller('LoginController',
     function LoginController($scope,UserService,$log,$window,localStorageService,CartService) {
         $scope.userName=localStorageService.Get("UserName");
         $scope.userId=localStorageService.Get("UserId"); 
-        
+        $scope.loginPage="login";
         
         $scope.Exist = function(){
             console.log("fetching");
