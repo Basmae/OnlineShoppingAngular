@@ -2,6 +2,8 @@ OnlineShoppingApp.controller('UserController',
     function UserController($scope,UserService,$log,$window,localStorageService,CartService) {
         $scope.userName=localStorageService.Get("UserName");
         $scope.userId=localStorageService.Get("UserId"); 
+        if(!$scope.userId)
+        $window.alert("Please Login");
         CartService.GetUserCarts($scope.userId).then(function(response){
             $scope.CartCounter=0;
             response.data.forEach(cart => {
@@ -31,12 +33,19 @@ OnlineShoppingApp.controller('UserController',
                 $window.alert("Please enter valid userName");
             });
         };
+        
+
         $scope.logout = function()
         {
             localStorageService.Set("UserName","");
             localStorageService.Set("UserId",null);
             $window.location = '#/login';
      
+        }
+        $scope.Sync=function()
+        {
+            $window.location.reload();
+            
         }
        
     }

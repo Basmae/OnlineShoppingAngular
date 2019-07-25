@@ -1,4 +1,42 @@
+
 <nav class="mb-1 navbar navbar-expand-lg navbar-light bg-light navbar-background ">
+    <div ng-controller="FilterController as modal"
+    class="modal-container" ng-show="modal.show">
+ <div class="modal-window">
+   <div class="row">
+      <div class="col-12">
+          <button class="btn btn-default float-right " ng-click="modal.returnValue('no')">X</button>
+       </div>
+   </div>
+  <div class="justify-content-center text-center col-12 mt-5">
+    <span class="mr-3">
+      Min. Price
+    </span>
+    <span>
+        {{sliderValue1 | currency}}
+    </span>
+  </div>
+   <div class="justify-content-center text-center col-12 mt-5">
+      <slider slideStop="executeMe()" ng-model="sliderValue1"
+       min="{{minValue}}" step="{{step}}" max="{{maxValue}}"></slider>
+   </div>
+   <div class="justify-content-center text-center col-12 mt-5">
+      <span class="mr-3">
+        Max. Price
+      </span>
+      <span>
+          {{sliderValue2 | currency}}
+      </span>
+    </div>
+     <div class="justify-content-center text-center col-12 mt-5">
+        <slider slideStop="executeMe()" ng-model="sliderValue2"
+         min="{{minValue}}" step="{{step}}" max="{{maxValue}}"></slider>
+     </div>
+     <div class="justify-content-center text-center col-12 mt-5">
+       <button class="btn btn-success" ng-click="ApplyFilter()">Apply Filter</button>
+     </div>
+ </div>
+</div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="UserController">
 
@@ -25,16 +63,18 @@
             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{userName}}
           </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" ng-controller="mainController">
             <a class="dropdown-item" ng-href="#/home">Home</a>
-            <a class="dropdown-item" ng-show="isHome===1" ng-href="#">filter</a>
-            <a class="dropdown-item" ng-href="#">sync</a>
+            <a class="dropdown-item" ng-show="isHome===1"  ng-click="openModal()">filter</a>
+            <a class="dropdown-item" ng-click="Sync()">sync</a>
             <button class="dropdown-item" ng-click="logout()">Logout</button>
           </div>
         </li>
+       
 
 
       </ul>
     </div>
   </div>
+  
 </nav>

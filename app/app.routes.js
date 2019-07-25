@@ -16,6 +16,10 @@ OnlineShoppingApp.config(function($routeProvider,$locationProvider){
         templateUrl:'app/components/CartComponent/cart.html',
         controller:'CartController'
     });
+    $routeProvider.when('/filter',{
+        templateUrl:'app/components/HomeComponent/filter.html',
+        controller:'FilterController'
+    });
     $routeProvider.otherwise({redirectTo:'/login'});
     
     //$locationProvider.html5Mode(true);

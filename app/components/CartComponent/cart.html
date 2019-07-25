@@ -1,0 +1,51 @@
+<div>
+        <nav-bar></nav-bar>
+    </div>
+    
+    <div>
+        <table class="table table-striped border-bottom" >
+            <tr style="background-color: cornflowerblue">
+                <th class="col-3">
+    
+                </th>
+                <th class="col-6">
+    
+                </th>
+                <th class="col-3">
+                    Price
+                </th>
+                <th class="col-4">
+                    Quantity
+                </th>
+            </tr>
+            <tr ng-repeat="cart in carts">
+                <td>
+                    <img ng-src="{{cart.image}}" width="100" height="100">
+                </td>
+                <td>
+                    <div >
+                        <h4>
+                            {{cart.product.productName}}
+                        </h4>
+                        <h6 style="color: green">
+                            {{cart.InStock}}
+                        </h6>
+                        <a ng-href="" ng-click="Delete(cart)">
+                            Delete
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    {{cart.product.price | currency}}
+                </td>
+                <td>
+                    {{cart.quantity}}
+                </td>
+            </tr>
+    
+    
+        </table>
+        <div class="mt-3">
+                <button class="btn btn-success float-right" ng-if="carts" ng-click="SubmitOrder()">Submit</button>
+        </div>
+    </div>
