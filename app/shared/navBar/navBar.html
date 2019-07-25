@@ -40,12 +40,12 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="UserController">
 
-    <a ng-href="/cart" class="navbar-brand">
+    <a ng-href="cart" class="navbar-brand">
       <i class="fas fa-shopping-cart "></i>
       <span class="badge  rounded-circle text-light">{{CartCounter}}</span>
     </a>
 
-    <a class="navbar-brand" ng-href="/home">e.Shop.Com</a>
+    <a class="navbar-brand" ng-href="home">e.Shop.Com</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
       aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -64,7 +64,7 @@
             {{userName}}
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" ng-controller="mainController">
-            <a class="dropdown-item" ng-href="#/home">Home</a>
+            <a class="dropdown-item" ng-href="home">Home</a>
             <a class="dropdown-item" ng-show="isHome===1"  ng-click="openModal()">filter</a>
             <a class="dropdown-item" ng-click="Sync()">sync</a>
             <button class="dropdown-item" ng-click="logout()">Logout</button>

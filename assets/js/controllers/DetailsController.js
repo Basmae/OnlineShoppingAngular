@@ -55,9 +55,13 @@ OnlineShoppingApp.controller('DetailsController',
                 //CartService.SetCartCount($scope.counter);
             //window.location = '#/home';
            // $window.location.reload('/home');
-                $location.path('/home');
+                $location.path('home');
             }
-            
+            else{
+                $window.alert("sorry the product isn't available in the store");
+                $location.path('home');
+
+            }
            
         }
 

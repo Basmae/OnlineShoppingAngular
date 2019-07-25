@@ -2,7 +2,7 @@ OnlineShoppingApp.config(function($routeProvider,$locationProvider){
    
     $routeProvider.when('/login',{
         templateUrl:'app/components/LoginComponent/login.html',
-        controller:'UserController'
+        controller:'LoginController'
     });
     $routeProvider.when('/home',{
         templateUrl:'app/components/HomeComponent/home.html',
