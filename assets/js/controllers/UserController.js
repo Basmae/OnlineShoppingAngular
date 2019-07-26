@@ -2,6 +2,8 @@ OnlineShoppingApp.controller('UserController',
     function UserController($scope,UserService,$log,$window,localStorageService,CartService) {
         $scope.userName=localStorageService.Get("UserName");
         $scope.userId=localStorageService.Get("UserId"); 
+        console.log(localStorageService.Get("UserId")
+        );
         CartService.GetUserCarts($scope.userId).then(function(response){
             $scope.CartCounter=response.data.length;
             $scope.CartCounter=0;
@@ -25,7 +27,7 @@ OnlineShoppingApp.controller('UserController',
         $scope.logout = function()
         {
             localStorageService.Set("UserName","");
-            localStorageService.Set("UserId",null);
+            localStorageService.Set("UserId",-1);
             $window.location = 'login';
      
         }
