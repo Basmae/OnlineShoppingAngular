@@ -14,10 +14,12 @@ OnlineShoppingApp.controller('LoginController',
                     localStorageService.Set("UserName",$scope.userName)
                     UserService.GetUserByName($scope.userName).then(function(response){
                     localStorageService.Set("UserId",response.data.id);
-                    console.log("hhgdgh",response.data.id);
+                    $scope.userId=localStorageService.Get("UserId"); 
+                    console.log("hhgdgh",$window.localStorage);
+                    $window.location = 'home';
+
                     })
 
-                     $window.location = 'home';
                 }
                 else
                 $window.alert("Please enter valid userName");
